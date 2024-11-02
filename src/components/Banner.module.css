@@ -1,0 +1,215 @@
+.banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6rem 2rem;
+  background: var(--gradient-bg);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('/images/dragon-scales.png') repeat;
+  opacity: 0.1;
+  z-index: 1;
+}
+
+.content {
+  flex: 1;
+  z-index: 2;
+}
+
+.imageContainerMobile {
+  display: none;
+  justify-content: center;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.imageMobile {
+  width: 75vw;
+  height: auto;
+  max-width: 100%;
+  filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.3));
+}
+
+.title {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.description {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+}
+
+.tokenInfo {
+  margin-bottom: 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.tokenAddress, .totalSupply {
+  font-size: 0.9rem;
+}
+
+.tokenAddress a {
+  color: var(--accent-color);
+  text-decoration: underline;
+  word-break: break-all;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 25px;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.primaryButton {
+  background-color: white;
+  color: var(--primary-color);
+}
+
+.primaryButton:hover {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+.secondaryButton {
+  border: 2px solid white;
+  color: white;
+}
+
+.secondaryButton:hover {
+  background-color: white;
+  color: var(--primary-color);
+}
+
+.imageContainer {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+}
+
+.image {
+  margin-top: 2rem;
+  max-width: 90%;
+  height: auto;
+  filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.3));
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+@media (max-width: 1200px) {
+  .title {
+    font-size: 3.5rem;
+  }
+
+  .description {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .banner {
+    flex-direction: column;
+    padding: 2rem 1rem;
+  }
+
+  .imageContainerMobile {
+    display: flex;
+    margin-top: 5rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .imageContainer {
+    display: none;
+  }
+
+  .title {
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  .description {
+    font-size: 1rem;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .tokenInfo {
+    text-align: center;
+  }
+
+  .buttons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .description {
+    font-size: 0.9rem;
+  }
+
+  .tokenAddress, .totalSupply {
+    font-size: 0.8rem;
+  }
+
+  .buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .button {
+    width: 100%;
+    max-width: 250px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .description {
+    font-size: 0.85rem;
+  }
+
+  .tokenAddress, .totalSupply {
+    font-size: 0.75rem;
+  }
+
+  .button {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}

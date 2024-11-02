@@ -1,0 +1,72 @@
+/* File: src/components/About.module.css */
+.about {
+  padding: 6rem 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.aboutTitle {
+  font-size: 3rem; /* Increased font size */
+  margin-bottom: 2rem; /* Added more space below the title */
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.textContent {
+  flex: 1;
+}
+
+.description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.imageContainer {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.image:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 900px) {
+  .aboutTitle {
+    font-size: 2.5rem; /* Slightly smaller font size for mobile */
+  }
+
+  .content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .imageContainer {
+    width: 100%;
+    order: 2;
+  }
+
+  .image {
+    width: 75%;
+    max-width: 75%;
+  }
+}
+
+@media (max-width: 600px) {
+  .aboutTitle {
+    font-size: 2rem; /* Even smaller font size for very small screens */
+  }
+}
